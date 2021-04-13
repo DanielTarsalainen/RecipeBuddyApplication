@@ -179,7 +179,7 @@ public class RecipeController {
 		
 		LocalTime timeNow = LocalTime.now();
 
-		int hours = timeNow.getHour();
+		int hours = timeNow.getHour() + 3;
 		String message = null;
 
 		if (hours >= 7 && hours < 12) {
@@ -208,7 +208,7 @@ public class RecipeController {
 
 		LocalTime timeNow = LocalTime.now();
 
-		int hours = timeNow.getHour();
+		int hours = timeNow.getHour() + 3;
 		String message = null;
 
 		if (hours >= 7 && hours < 12) {
