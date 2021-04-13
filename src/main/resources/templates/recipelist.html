@@ -65,7 +65,7 @@ a:hover {
 			<tr th:each="recipe, hh : ${recipes}">
 				<td th:text="${recipe.name}"></td>
 				<td><img th:src="@{${'/recipe/display/'+ recipe.id}}"
-					class="card img-fluid" style="width: 300px" alt="" /></td>
+					class="card img-fluid" style="max-width: 200px; max-height: 250px" alt="" /></td>
 				<td><textarea cols="70" rows="17"
 						th:text="${recipe.description}" disabled></textarea></td>
 				<td th:text="${recipe.category}"></td>
