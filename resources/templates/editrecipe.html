@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Edit recipe</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div>
+		<form id="form" th:object="${recipe}" th:action="@{/save}" action="#"
+			method="post">
+			
+			<input type="hidden" id="id" th:field="*{id}">
+
+<div class="col-md-6 col-sm-6 contact-form1 form-group">
+				<label class="col-form-label">Name</label> <input type="text"
+					th:field="*{name}"
+					class="form-control" placeholder="Food name" id="name" name="name"
+					required="required">
+				<p id="error_name"></p>
+			</div>
+
+			<div class="col-md-6 col-sm-6 contact-form1 form-group">
+				<label class="col-form-label">Description</label>
+				<textarea th:field="*{description}" cols="100" rows="10" class="form-control"
+					placeholder="Description" name="description" id="description"
+					required="required"></textarea>
+				<p id="error_description"></p>
+			</div>
+			
+			 <div class="col-md-6 col-sm-6 contact-form1 form-group">
+				<label class="col-form-label">Image</label> <input class="form-control form-control-lg" type="file" th:field="*{image}"
+					placeholder="Image of a delicious meal" id="image"
+					name="image" required="required">
+				<p id="error_image"></p>
+			</div>
+			 
+			<div class="col-md-6 col-sm-6 contact-form1 form-group">
+				<label class="col-form-label">Category</label> <input type="text" th:field="*{category}"
+					class="form-control" placeholder="Category" name="category"
+					id="category" required="required">
+				<p id="error_file"></p>
+				
+			</div>
+			<div class="right-w3l col-md-6">
+			<input class="btn btn-success" type="submit" value="Submit">
+			<br><br>
+			</div>
+		
+			
+			<br>
+				<div id="success" class="text-center" style="color:green;"></div>
+				<div id="error" class="text-center" style="color:red;"></div>
+		</form>
+	</div>
+	
+	<p class="text-center">
+  	<img src="/images/loader.gif" alt="loader" style="width: 150px;height: 120px;" id="loader">
+</p>
+	<script src="/js/product.js"></script>
+	
+</body>
+</html>

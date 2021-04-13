@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>RecipeBuddy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css">
+<style>
+a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 3px 7px;
+}
+
+a:hover {
+	background-color: #9AFEFE;
+	color: black;
+}
+
+.next {
+	background-color: #FF7D33;
+	color: white;
+}
+</style>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-light" style="background-color: #A3E4D7;">
+
+		<form th:action="@{/logout}" method="post">
+			<h2>
+				<input type="submit" value="Sign Out" class="btn btn-warning btn-lg" />&ensp;
+				[[${message}]] [[${#httpServletRequest.remoteUser}]]! <a
+					style="float: right" href="/showAllRecipes" class="next">Show
+					all recipes&raquo;</a>
+			</h2>
+		</form>
+
+		<h3 th:inline="text" class="title h1">
+			RecipeBuddy <a class="btn btn-success btn-lg" href="/addrecipe2">Add a
+				delicious recipe!</a>
+		</h3>
+		<br>
+	</nav>
+	<table id="example"
+		class="table table-hover table-bordered text-center">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Image</th>
+				<th>Recipe description</th>
+				<th>Category</th>
+				<th>Creation date</th>
+				<th>Functions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="recipe : ${recipe}">
+				<td th:text="${recipe.name}"></td>
+				<td><img th:src="@{${'/recipe/display/'+ recipe.id}}"
+					class="card img-fluid" style="width: 300px" alt="" /></td>
+				<td><textarea cols="70" rows="17"
+						th:text="${recipe.description}" disabled></textarea></td>
+				<td th:text="${recipe.category}"></td>
+				<td th:text="${#dates.format({recipe.createDate}, 'dd-MM-yyyy')}"></td>
+				<td><a th:href="@{/recipeDetails(id=${recipe.id})}"
+					target="_blank" class="btn btn-info">View recipe</a>
+					<div>&nbsp;</div>
+					<div>
+						<a class="btn btn-primary"
+							th:href="@{/edit/{id}(id=${recipe.id})}">Edit recipe</a>
+					</div>
+					<div>&nbsp;</div> <a class="btn btn-danger"
+					th:href="@{/delete/{id}(id=${recipe.id})}">Delete recipe</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+	<script
+		src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#example').DataTable();
+		});
+	</script>
+</body>
+</html>

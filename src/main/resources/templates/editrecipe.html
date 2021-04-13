@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+
+<html lang="fi" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Edit recipes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$('input[type="file"]').change(function(e) {
+			var fileName = e.target.files[0].name;
+			alert('The file "' + fileName + '" has been selected.');
+		});
+	});
+</script>
+
+</head>
+<nav class="navbar navbar-light" style="background-color: #A3E4D7;">
+
+
+<div>
+	<a style="float: left" href="/showOwnRecipes" class="btn btn-warning">Go back to the
+		list view </a>
+</div>
+<br>
+<br>
+<div class="text-center">
+	<h1>Edit a recipe</h1>
+</div>
+<br>
+<br>
+</nav>
+
+<body>
+<br>
+	<div>
+		<form id="form" th:object="${recipe}">
+
+			<input type="hidden" id="id" th:field="*{id}">
+
+
+
+			<div class="col-md-6 col-sm-6 contact-form1 form-group">
+				<label class="col-form-label">Name</label> <input type="text"
+					th:field="*{name}" class="form-control" placeholder="Food name"
+					id="name" name="name" required="required">
+				<p id="error_name"></p>
+			</div>
+
+
+			<div class="col-md-6 col-sm-6 contact-form1 form-group">
+				<label class="col-form-label">Image</label> <input
+					class="form-control form-control-lg" type="file"
+					placeholder="Image of a delicious meal" id="image" name="image"
+					required="required">
+				<p id="error_image"></p>
+			</div>
+
+			<div class="col-md-6 col-sm-6 contact-form1 form-group">
+				<label class="col-form-label">Description</label>
+				<textarea th:field="*{description}" cols="100" rows="10"
+					class="form-control" placeholder="Description" name="description"
+					id="description" required="required"></textarea>
+				<p id="error_description"></p>
+			</div>
+
+			<div class="col-md-6 col-sm-6 contact-form1 form-group">
+				<label class="col-form-label">Old image</label>
+				<div class="thumb-image" style="width: 150px">
+					<img th:src="@{${'/recipe/display/'+id}}"
+						class="img img-responsive img-fluid">
+				</div>
+			</div>
+
+			<div class="col-md-6 col-sm-6 contact-form1 form-group">
+				<label class="col-form-label">Category</label> <input type="text"
+					th:field="*{category}" class="form-control" placeholder="Category"
+					name="category" id="category" required="required">
+				<p id="error_file"></p>
+
+			</div>
+
+			<div class="right-w3l col-md-6">
+				<input type="button" id="save" class="btn btn-success"
+					value="Save"> <br> <br>
+			</div>
+
+			<br>
+			<div id="success" class="text-center" style="color: green;"></div>
+			<div id="error" class="text-center" style="color: red;"></div>
+		</form>
+	</div>
+	<br>
+	<br>
+
+	<p class="text-center">
+		<img src="/images/loader.gif" alt="loader"
+			style="width: 150px; height: 120px;" id="loader">
+	</p>
+	<script src="/js/editrecipe.js"></script>
+
+</body>
+</html>

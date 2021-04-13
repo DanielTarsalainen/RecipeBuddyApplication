@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>RecipeBuddy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css">
+</head>
+<body>
+<br>
+<h1 class="text-center">RecipeBuddy
+<a class="btn btn-success" href="/index">Add a delicious recipe!</a>
+</h1>
+<br><br>
+
+<table id="example" class="table table-hover table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Creation date</th>
+                <th>Functions</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody th:with="count=0">
+        <tr th:each = "recipe, hh : ${recipes}">           
+                <td th:text="${recipe.name}"></td>
+                <td><img th:src="@{${'/image/display/'+ recipe.id}}" 
+                class="card img-fluid" style="width:300px" alt=""/></td>
+                <td><textarea cols="160" rows="17" th:text="${recipe.description}" disabled></textarea></td>
+                <td th:text="${recipe.category}"></td>
+                <td th:text="${#dates.format({recipe.createDate}, 'dd-MM-yyyy')}"></td>
+                <td> <a th:href="@{/image/imageDetails(id=${recipe.id})}" target="_blank" class="btn btn-info">View recipe</a><div>&nbsp;</div><a class="btn btn-primary" th:href="@{/edit/{id}(id=${recipe.id})}">Edit recipe</a><div>&nbsp;</div><a class="btn btn-danger" th:href="@{/delete/{id}(id=${recipe.id})}" >Delete recipe</a> </td>
+                              
+            </tr>
+        </tbody>
+    </table>
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#example').DataTable();
+	} );
+	</script>
+</body>
+</html>

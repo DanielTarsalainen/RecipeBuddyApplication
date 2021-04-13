@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<title>Add recipes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('input[type="file"]').change(function(e) {
+			var fileName = e.target.files[0].name;
+			alert('The file "' + fileName + '" has been selected.');
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-light" style="background-color: #A3E4D7;">
+	<a href="/showOwnRecipes" style="float: left;"
+						class="btn btn-warning text-right">View recipes</a>
+	<br>
+	<br>
+	<h1 class="text-center">Add a recipe</h1>
+	<br>
+	<br>
+	</nav>
+	<div class="contact py-sm-5 py-4">
+		<div class="container py-xl-4 py-lg-2">
+		
+		
+			<form id="form">
+
+				<input type="hidden" id="id">
+
+
+				<div class="contact-grids1 w3agile-6">
+
+					<div class="row">
+
+						<div class="col-md-6 col-sm-6 contact-form1 form-group">
+							<label class="col-form-label">Name</label> <input type="text"
+								class="form-control" placeholder="Food name" id="name"
+								name="name" required="required">
+							<p id="error_name"></p>
+						</div>
+						<div class="col-md-6 col-sm-6 contact-form1 form-group">
+							<label class="col-form-label">Image</label> <input type="file"
+								class="form-control" placeholder="Image of a delicious meal"
+								name="image" id="image" required="required">
+							<p id="error_description"></p>
+						</div>
+						<div class="col-md-6 col-sm-6 contact-form1 form-group">
+							<label class="col-form-label">Description</label>
+							<textarea cols="100" rows="10" class="form-control"
+								placeholder="Description" name="description" id="description"
+								required="required"></textarea>
+							<p id="error_file"></p>
+						</div>
+						<div class="col-md-6 col-sm-6 contact-form1 form-group">
+							<label class="col-form-label">Category</label> <input type="text"
+								class="form-control" placeholder="Category" name="category"
+								id="category" required="required">
+							<p id="error_file"></p>
+						</div>
+					</div>
+
+					<div>
+						<input type="button" id="submit"
+							class="btn btn-success" value="Submit"> <br>
+						<br>
+					</div>
+				</div>
+				<br>
+				<div id="success" class="text-center" style="color: green;"></div>
+				<div id="error" class="text-center" style="color: red;"></div>
+			</form>
+		</div>
+	</div>
+	<p class="text-center">
+		<img src="/images/loader.gif" alt="loader"
+			style="width: 150px; height: 120px;" id="loader">
+	</p>
+	<script src="/js/addrecipe.js"></script>
+</body>
+</html>
