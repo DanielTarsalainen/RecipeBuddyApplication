@@ -26,8 +26,6 @@ a:hover {
 	background-color: #FF7D33;
 	color: white;
 }
-
-
 </style>
 
 </head>
@@ -45,8 +43,8 @@ a:hover {
 		</form>
 
 		<h3 th:inline="text" class="title h1">
-			RecipeBuddy <a class="btn btn-success btn-lg" href="/addrecipe">Add a
-				delicious recipe!</a>
+			RecipeBuddy <a class="btn btn-success btn-lg" href="/addrecipe">Add
+				a delicious recipe!</a>
 		</h3>
 		<br>
 	</nav>
@@ -66,7 +64,8 @@ a:hover {
 			<tr th:each="recipe, hh : ${recipes}">
 				<td th:text="${recipe.name}"></td>
 				<td><img th:src="@{${'/recipe/display/'+ recipe.id}}"
-					class="card img-fluid" style="max-width: 200px; max-height: 250px" alt="" /></td>
+					class="card img-fluid" style="max-width: 200px; max-height: 250px"
+					alt="" /></td>
 				<td><textarea cols="90" rows="9"
 						th:text="${recipe.description}" disabled></textarea></td>
 				<td th:text="${recipe.category}"></td>
