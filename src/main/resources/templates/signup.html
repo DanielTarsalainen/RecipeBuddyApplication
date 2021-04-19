@@ -7,13 +7,13 @@
 	th:href="@{css/bootstrap.min.css}" />
 </head>
 <body>
-	<div class="container">
-		<nav class="navbar navbar-light" style="background-color: #A3E4D7;">
+
+<nav class="navbar navbar-light" style="background-color: #A3E4D7;">
 
 			<h3 style="text-align: center;" th:inline="text" class="title h1">RecipeBuddy
 				signup</h3>
 		</nav>
-		<br>
+	<div class="container">
 		<div class="col-md-4">
 			<form th:object="${signupform}" th:action="@{/saveuser}" action="#"
 				method="post">
