@@ -154,6 +154,30 @@ public class RecipeController {
 			return "redirect:/home";
 		}
 	}
+	
+	@GetMapping("/recipeDetails2")
+	String showRecipeDetails2(@RequestParam("id") Long id, Optional<Recipe> recipe, Model model) {
+		try {
+			log.info("Id :: " + id);
+			if (id != 0) {
+				recipe = recipeRepository.findById(id);
+
+				if (recipe.isPresent()) {
+					model.addAttribute("id", recipe.get().getId());
+					model.addAttribute("name", recipe.get().getName());
+					model.addAttribute("category", recipe.get().getCategory());
+					model.addAttribute("description", recipe.get().getDescription());
+					model.addAttribute("date", recipe.get().getCreateDate());
+					return "recipedetails";
+				}
+				return "redirect:/ownrecipes";
+			}
+			return "redirect:/ownrecipes";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "redirect:/ownrecipes";
+		}
+	}
 
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String deleterecipe(@PathVariable("id") Long Id, Model model) {

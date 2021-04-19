@@ -70,7 +70,7 @@ a:hover {
 						th:text="${recipe.description}" disabled></textarea></td>
 				<td th:text="${recipe.category}"></td>
 				<td th:text="${#dates.format({recipe.createDate}, 'dd-MM-yyyy')}"></td>
-				<td><a th:href="@{/recipeDetails(id=${recipe.id})}"
+				<td><a th:href="@{/recipeDetails2(id=${recipe.id})}"
 					target="_blank" class="btn btn-info">View recipe</a>
 					<div>&nbsp;</div>
 					<div>
