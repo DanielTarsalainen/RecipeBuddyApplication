@@ -5,11 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.example.recipebuddyapp.model.Recipe;
-import com.example.recipebuddyapp.model.RecipeRepository;
-import com.example.recipebuddyapp.model.User;
-import com.example.recipebuddyapp.model.UserRepository;
-
 @SpringBootApplication
 public class RecipeBuddyApplication {
 
