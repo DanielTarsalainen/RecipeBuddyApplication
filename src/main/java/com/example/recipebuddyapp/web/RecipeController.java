@@ -168,14 +168,14 @@ public class RecipeController {
 					model.addAttribute("category", recipe.get().getCategory());
 					model.addAttribute("description", recipe.get().getDescription());
 					model.addAttribute("date", recipe.get().getCreateDate());
-					return "recipedetails";
+					return "recipedetails2";
 				}
-				return "ownrecipes";
+				return "redirect:/ownrecipes";
 			}
-			return "ownrecipes";
+			return "redirect:/ownrecipes";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "ownrecipes";
+			return "redirect:/ownrecipes";
 		}
 	}
 
