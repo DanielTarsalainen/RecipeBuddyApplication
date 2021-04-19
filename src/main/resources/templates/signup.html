@@ -8,25 +8,29 @@
 </head>
 <body>
 	<div class="container">
-		<h2>Sign-up</h2>
+		<nav class="navbar navbar-light" style="background-color: #A3E4D7;">
+
+			<h3 style="text-align: center;" th:inline="text" class="title h1">RecipeBuddy
+				signup</h3>
+		</nav>
 		<br>
 		<div class="col-md-4">
 			<form th:object="${signupform}" th:action="@{/saveuser}" action="#"
 				method="post">
 				<div>
-					<label> Username :<input type="text" th:field="*{username}"
+					<label> Username: <input type="text" th:field="*{username}"
 						class="form-control" /></label>
 					<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username
 						Error</p>
 				</div>
 				<div>
-					<label> Email :<input type="text" th:field="*{mail}"
+					<label> Email: <input type="text" th:field="*{mail}"
 						class="form-control" /></label>
 					<p th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}">Email
 						Error</p>
 				</div>
 				<div>
-					<label> Password :<input type="password"
+					<label> Password: <input type="password"
 						th:field="*{password}" class="form-control" /></label>
 					<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
 						Error</p>
@@ -44,5 +48,3 @@
 	</div>
 </body>
 </html>
-<br>
-© 2021 GitHub, Inc.
