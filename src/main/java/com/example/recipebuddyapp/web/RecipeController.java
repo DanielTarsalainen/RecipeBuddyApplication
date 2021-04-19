@@ -170,12 +170,12 @@ public class RecipeController {
 					model.addAttribute("date", recipe.get().getCreateDate());
 					return "recipedetails";
 				}
-				return "redirect:/ownrecipes";
+				return "ownrecipes";
 			}
-			return "redirect:/ownrecipes";
+			return "ownrecipes";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "redirect:/ownrecipes";
+			return "ownrecipes";
 		}
 	}
 
