@@ -15,7 +15,6 @@ a {
 	display: inline-block;
 	padding: 3px 7px;
 	border-radius: 7px;
-	
 }
 
 a:hover {
@@ -43,9 +42,10 @@ a:hover {
 			</h2>
 		</form>
 		<h3 th:inline="text" class="title h1">
-			RecipeBuddy </h3><a class="btn btn-success btn-lg" href="/addrecipe">Add a
-				delicious recipe!</a>
-		
+			RecipeBuddy <a class="btn btn-success btn-lg" href="/addrecipe">Add
+				a delicious recipe!</a>
+		</h3>
+
 		<br>
 	</nav>
 	<table id="example"
@@ -64,7 +64,8 @@ a:hover {
 			<tr th:each="recipe : ${recipe}">
 				<td th:text="${recipe.name}"></td>
 				<td><img th:src="@{${'/recipe/display/'+ recipe.id}}"
-					class="card img-fluid" style="max-width: 200px; max-height: 250px" alt="" /></td>
+					class="card img-fluid" style="max-width: 200px; max-height: 250px"
+					alt="" /></td>
 				<td><textarea cols="90" rows="9"
 						th:text="${recipe.description}" disabled></textarea></td>
 				<td th:text="${recipe.category}"></td>
