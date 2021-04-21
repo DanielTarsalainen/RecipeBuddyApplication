@@ -123,7 +123,6 @@ public class RecipeController {
 	@ResponseBody
 	void showImage(@PathVariable("id") Long id, HttpServletResponse response, Optional<Recipe> recipe)
 			throws ServletException, IOException {
-		log.info("Id :: " + id);
 		recipe = recipeRepository.findById(id);
 		response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
 		response.getOutputStream().write(recipe.get().getImage());
@@ -133,7 +132,6 @@ public class RecipeController {
 	@GetMapping("/recipeDetails")
 	String showRecipeDetails(@RequestParam("id") Long id, Optional<Recipe> recipe, Model model) {
 		try {
-			log.info("Id :: " + id);
 			if (id != 0) {
 				recipe = recipeRepository.findById(id);
 
@@ -157,7 +155,6 @@ public class RecipeController {
 	@GetMapping("/recipeDetails2")
 	String showRecipeDetails2(@RequestParam("id") Long id, Optional<Recipe> recipe, Model model) {
 		try {
-			log.info("Id :: " + id);
 			if (id != 0) {
 				recipe = recipeRepository.findById(id);
 
