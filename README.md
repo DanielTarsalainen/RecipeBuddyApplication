@@ -2,9 +2,11 @@
 
 ### Creator: Daniel Tarsalainen
 
+</br>
+
 ## Basic information:
 
-RecipeBuddy is a browser based food recipe system. The user can save own recipes and edit them, as well as view other people's recipes. 
+RecipeBuddy is a browser based food recipe system. The user can save own recipes and edit them, as well as view other people's recipes. Live installation: https://recipebuddyapplication.herokuapp.com/ (it takes about 45 seconds to get to the site).
 
 ## Technologies: 
 - Java 
