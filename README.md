@@ -1,4 +1,4 @@
-# RecipeBuddyApplication
+# RecipeBuddy
 
 ### Creator: Daniel Tarsalainen
 
