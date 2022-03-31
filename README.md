@@ -11,6 +11,7 @@ RecipeBuddy is a browser based food recipe system. The user can save own recipes
 ## Technologies: 
 - Java 
 - Java Spring Boot
+- Thymeleaf
 - Postgre SQL database
 
 ## Views:
