@@ -55,9 +55,3 @@ RecipeBuddy is a browser based food recipe system. The user can save own recipes
 <br/>
 
 ![kuva](https://user-images.githubusercontent.com/77921212/152023404-474999ef-9ff9-420d-ae38-e397018121d1.png)
-
-
-
-
-
-
