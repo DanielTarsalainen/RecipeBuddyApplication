@@ -9,7 +9,7 @@
 - [Server programming](https://opinto-opas.haaga-helia.fi/course_unit/SWD4TF021) -end project
 - Grade: 5/5
 
-RecipeBuddy is a browser based food recipe system. The user can save own recipes and edit them, as well as view other people's recipes. [Live installation](https://recipebuddyapplication.herokuapp.com/) (it takes about 45 seconds to get to the site).
+RecipeBuddy is a browser based food recipe system. The user can save own recipes and edit them, as well as view other people's recipes.
 
 
 ## Technologies: 
