@@ -4,7 +4,7 @@
 
 </br>
 
-## Basic information:
+## Basic information
 
 - [Server programming](https://opinto-opas.haaga-helia.fi/course_unit/SWD4TF021) -end project
 - Grade: 5/5
@@ -12,7 +12,7 @@
 RecipeBuddy is a browser based food recipe system. The user can save own recipes and edit them, as well as view other people's recipes.
 
 
-## Technologies: 
+## Technologies 
 - Java 
 - Java Spring Boot
 - Thymeleaf
@@ -20,22 +20,22 @@ RecipeBuddy is a browser based food recipe system. The user can save own recipes
 
 ## Views:
 
-### View 1 (Login):
+### View 1 (Login)
 <br/>
 
 ![kuva](https://user-images.githubusercontent.com/77921212/152021915-3241d4a5-18bb-4356-88d9-8e2e8c5c1b94.png)
 
-### View 2 (Signup):
+### View 2 (Signup)
 <br/>
 
 ![kuva](https://user-images.githubusercontent.com/77921212/152022262-31bfcf66-9d31-40a7-bb8a-fe7955671d73.png)
 
-### View 3 (All recipes):
+### View 3 (All recipes)
 <br/>
 
 ![kuva](https://user-images.githubusercontent.com/77921212/152022566-5420de36-970f-4d41-9e4f-e5e051f540cd.png)
 
-### View 4 (Own recipes):
+### View 4 (Own recipes)
 <br/>
 
 ![kuva](https://user-images.githubusercontent.com/77921212/152022676-52f49139-49d4-4ebd-9b41-0fd537bb9018.png)
